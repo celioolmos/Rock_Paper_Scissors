@@ -8,7 +8,40 @@
 </head>
 <body>
     <script>
-        console.log("hello world")
+        //function playRound(playerSelection, computerSelection) {
+            function getComputerChoice(){ 
+        //compare selections to each other
+        
+        // get selection from human  
+        var userSelection = prompt("Please type Rock , Paper , or Scissors");
+        // get selection from computer
+        var compChoice = ["Rock" , "Paper" , "Scissors"];
+        
+        var randomValue = compChoice[Math.floor(Math.random() * compChoice.length)];
+     
+              
+        //provide message (if else statements) for the following potential results
+        console.log("Computer Guess: " + randomValue);
+            if(userSelection.toUpperCase() === randomValue.toUpperCase()) {
+            finalResult = "Tied Game"
+            } else if(((userSelection == "ROCK") && (randomValue == "PAPER"))||(userSelection == "PAPER") && (randomValue  == "SCISSORS")
+            || (userSelection == "SCISSORS") && (randomValue == "ROCK")) {
+                finalResult="You Lost!";
+            }
+            else {finalResult = "You Win!"} ;
+
+        
+        console.log("User Guess: " + userSelection);
+        console.log(finalResult);
+        };
+        getComputerChoice();
+//}
+ 
+//const playerSelection = "rock";
+//const computerSelection = getComputerChoice();
+//console.log(playRound(playerSelection, computerSelection));
+
+        
     </script>
 </body>
 </html>

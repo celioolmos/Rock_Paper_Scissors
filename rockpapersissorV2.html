@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+// get selection from computer
+function getComputerChoice(){   
+    var compChoice = ["Rock" , "Paper" , "Scissors"];
+    var randomValue = compChoice[Math.floor(Math.random() * compChoice.length)];
+    return randomValue.toUpperCase();
+}
+
+// get selection from human  
+function getPlayerSelection() {    
+    var userSelection = prompt("Please type Rock , Paper , or Scissors")
+        userSelection = userSelection.toUpperCase();
+        if (userSelection === "ROCK" || userSelection === "PAPER" || userSelection === "SCISSORS") {
+    return userSelection;
+  } else {
+    console.log("Error!");
+  }
+}
+        
+              
+//provide message (if else statements) for the following potential results
+function getWinner(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+            return  "Tied Game";
+            } else if(((playerSelection == "ROCK") && (computerSelection == "PAPER"))||(playerSelection == "PAPER") && (computerSelection  == "SCISSORS")
+            || (playerSelection == "SCISSORS") && (computerSelection == "ROCK")) {
+                return "You Lost!";
+            }
+            else {
+                return  "You Win!" ;}
+}
+// function to gather results and provide results
+ function playRound(){
+    var playerSelection = getPlayerSelection();
+    var computerSelection = getComputerChoice();
+    const gameResult = getWinner(playerSelection, computerSelection);
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(gameResult);
+ }
+ function game(){
+    let text = "";
+
+for (let i = 1; i < 6; i++) {
+    console.log(i)
+  playRound();
+}
+ }
+ game();
+    </script>
+</body>
+</html>
